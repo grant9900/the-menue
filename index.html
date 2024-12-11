@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .menu {
+            border: 2px solid white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 400px;
+            background-color: #222;
+        }
+        .menu h1 {
+            font-size: 24px;
+        }
+        .menu-section {
+            margin-bottom: 20px;
+        }
+        .menu-section h2 {
+            color: #ddd;
+            border-bottom: 1px solid #555;
+            padding-bottom: 5px;
+        }
+        .menu-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .menu-section li {
+            margin: 5px 0;
+        }
+        .comment-section {
+            margin-top: 30px;
+        }
+        .comment-section textarea {
+            width: 90%;
+            height: 100px;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+        .comment-section button {
+            padding: 10px 20px;
+            background-color: white;
+            color: black;
+            border: none;
+            cursor: pointer;
+        }
+        .share-buttons {
+            margin-top: 20px;
+        }
+        .share-buttons button {
+            margin: 5px;
+            padding: 10px 15px;
+            background-color: white;
+            color: black;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <h1>🍽️ MENU</h1>
+        <div class="menu-section">
+            <h2>Beverages</h2>
+            <ul>
+                <li>Brazilian Lemonade</li>
+            </ul>
+        </div>
+        <div class="menu-section">
+            <h2>Meals</h2>
+            <ul>
+                <li>Chicken Lollipops</li>
+            </ul>
+        </div>
+        <div class="menu-section">
+            <h2>Snacks</h2>
+            <ul>
+                <li>Angel Cake Cupcake</li>
+                <li>Deep Fried Milky Way</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="comment-section">
+        <h2>Leave a Comment</h2>
+        <textarea placeholder="Write your comment here..."></textarea>
+        <br>
+        <button onclick="submitComment()">Submit Comment</button>
+    </div>
+
+    <div class="share-buttons">
+        <h2>Share This Page</h2>
+        <button onclick="share('facebook')">Share on Facebook</button>
+        <button onclick="share('twitter')">Share on Twitter</button>
+        <button onclick="share('other')">Share on Other Platforms</button>
+    </div>
+
+    <script>
+        function submitComment() {
+            alert("Thank you for your comment!");
+        }
+
+        function share(platform) {
+            let url = window.location.href;
+            if (platform === "facebook") {
+                window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, "_blank");
+            } else if (platform === "twitter") {
+                window.open(`https://twitter.com/intent/tweet?url=${url}`, "_blank");
+            } else {
+                alert("Copy the link to share: " + url);
+            }
+        }
+    </script>
+</body>
+</html>
